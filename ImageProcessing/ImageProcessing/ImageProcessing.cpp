@@ -69,13 +69,13 @@ void unShuffleImage()
 	int blockCount = 0;
 
 	//load shuffled logo image and store in new matrix
-	char* shuffledFileName = "C:\\Users\\Daniel\\Documents\\logo_shuffled.txt"; 
+	char* shuffledFileName = "logo_shuffled.txt"; 
 	double* shuffled_data = 0;
 	shuffled_data = readTXT(shuffledFileName, rows, columns);
 	MatrixClass shuffledLogo(rows, columns, shuffled_data);
 
 	//load noisey logo image perform restoration and store in new matrix
-	char* restoredFileName = "C:\\Users\\Daniel\\Documents\\logo_with_noise.txt";
+	char* restoredFileName = "logo_with_noise.txt";
 	double* restored_data = 0;
 	restored_data = readTXT(restoredFileName, rows, columns);
 
@@ -191,7 +191,7 @@ void unShuffleImage()
 	
 
 	int Q = 255;
-	char* solvedOutput = "C:\\Users\\Daniel\\Documents\\Logo_UnShuffled.pgm";
+	char* solvedOutput = "Logo_UnShuffled.pgm";
 	WritePGM(solvedOutput, unShuffled_data, rows, columns, Q);	
 
 	delete [] shuffled_data;
@@ -217,13 +217,13 @@ void ncFindWally()
 
 	//Reads in Cluttered scene text file and stored in heap memory, additionally creating a matrix to hold this data
 	double* scene_data = 0;
-	char* sceneFileName = "C:\\Users\\Daniel\\Documents\\Cluttered_scene.txt"; 
+	char* sceneFileName = "Cluttered_scene.txt"; 
 	scene_data = readTXT(sceneFileName, sceneRows, sceneColumns);
 	MatrixClass sceneMatrix(sceneRows,sceneColumns,scene_data);
 
 	//Reads in Wally text file and stored in heap memory, additionally creating a matrix to hold this data
 	double* wally_data = 0;
-	char* wallyFileName = "C:\\Users\\Daniel\\Documents\\Wally_grey.txt";
+	char* wallyFileName = "Wally_grey.txt";
 	wally_data = readTXT(wallyFileName, wallyRows, wallyColumns);
 	MatrixClass wallyMatrix(wallyRows, wallyColumns, wally_data);
 
@@ -300,7 +300,7 @@ void ncFindWally()
 
 
 	int Q = 255; 
-	char* outputFileName = "C:\\Users\\Daniel\\Documents\\Wally_Found.pgm";
+	char* outputFileName = "Wally_Found.pgm";
 	WritePGM(outputFileName, wallyFound_data, sceneRows, sceneColumns, Q); 
 	
 	//Delete vdata stored on the heap
